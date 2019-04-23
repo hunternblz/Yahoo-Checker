@@ -11,7 +11,7 @@ $ cd Yahoo-Checker
 
 ## Usage
 
-```terminal
+```php
 $ php Yahoo.php
 ```
 
