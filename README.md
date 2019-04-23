@@ -14,3 +14,4 @@ $ cd Yahoo-Checker
 ```php
 $ php Yahoo.php
 ```
+
