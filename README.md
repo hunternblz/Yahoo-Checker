@@ -1,6 +1,6 @@
 # Yahoo Checker
 
-<b>Tools Untuk Mengecek Apakah Email Tersebut Sudah Digunakan Atau Belum
+<b>Tools Untuk Mengecek Apakah Email Tersebut Sudah Digunakan Atau Belum</b>
 
 ## Installation
 
