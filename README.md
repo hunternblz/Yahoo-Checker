@@ -1,7 +1,5 @@
 # Yahoo Checker
 
-<b>Tools Untuk Mengecek Apakah Email Tersebut Sudah Digunakan Atau Belum</b>
-
 ## Installation + Usage
 
 ```terminal
