@@ -1,6 +1,9 @@
 <?php
+error_reporting(0);
+system("clear");
 $banner = "\e[33;1m                                                                                 
                                                                                  
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱                      
 ╭╮╱╭┳╮╱╭┳━╮╱╭┳━━━━┳━━━┳━━━┳━╮╱╭┳━━╮╭╮╱╱╭━━━━╮
 ┃┃╱┃┃┃╱┃┃┃╰╮┃┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╮┃┃╭╮┃┃┃╱╱╰━━╮━┃
 ┃╰━╯┃┃╱┃┃╭╮╰╯┣╯┃┃╰┫╰━━┫╰━╯┃╭╮╰╯┃╰╯╰┫┃╱╱╱╱╭╯╭╯
@@ -10,16 +13,16 @@ $banner = "\e[33;1m
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
                               
                                                                                  
-[#] Yahoo Email Checker [#]    
+[×] Yahoo Email Checker Validation [×]    
                                    
-Coded By : Muhammad Nabil / Hunter.Nblz                  
+Coded By : Muhammad Nabil / HunterNblz                  
 Github   : https//github.com/hunternblz\n\n\e[0;1m";
-sleep(3);
+sleep(2);
 echo $banner;
 sleep(2);
-echo "List Email : ";
+echo "[\e[33;1m+\e[0;1m] List Email : ";
 $list = trim(fgets(STDIN));
-
+echo "\n";
 $file = file_get_contents("$list");
 $data = explode("\n", str_replace("\r", "", $file));
 $x = 0;
