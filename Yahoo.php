@@ -2,25 +2,23 @@
 error_reporting(0);
 system("clear");
 $banner = "\e[33;1m                                                                                 
-                                                                                 
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱                      
-╭╮╱╭┳╮╱╭┳━╮╱╭┳━━━━┳━━━┳━━━┳━╮╱╭┳━━╮╭╮╱╱╭━━━━╮
-┃┃╱┃┃┃╱┃┃┃╰╮┃┃╭╮╭╮┃╭━━┫╭━╮┃┃╰╮┃┃╭╮┃┃┃╱╱╰━━╮━┃
-┃╰━╯┃┃╱┃┃╭╮╰╯┣╯┃┃╰┫╰━━┫╰━╯┃╭╮╰╯┃╰╯╰┫┃╱╱╱╱╭╯╭╯
-┃╭━╮┃┃╱┃┃┃╰╮┃┃╱┃┃╱┃╭━━┫╭╮╭┫┃╰╮┃┃╭━╮┃┃╱╭╮╭╯╭╯
-┃┃╱┃┃╰━╯┃┃╱┃┃┃╱┃┃╱┃╰━━┫┃┃╰┫┃╱┃┃┃╰━╯┃╰━╯┣╯━╰━╮
-╰╯╱╰┻━━━┻╯╱╰━╯╱╰╯╱╰━━━┻╯╰━┻╯╱╰━┻━━━┻━━━┻━━━━╯
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
-                              
-                                                                                 
-[×] Yahoo Email Checker Validation [×]    
-                                   
-Coded By : Muhammad Nabil / HunterNblz                  
-Github   : https//github.com/hunternblz\n\n\e[0;1m";
+   _   _             _            _   _ _     _
+  | | | |_   _ _ __ | |_ ___ _ __| \ | | |__ | |____
+  | |_| | | | | '_ \| __/ _ \ '__|  \| | '_ \| |_  /
+  |  _  | |_| | | | | ||  __/ |  | |\  | |_) | |/ /
+  |_| |_|\__,_|_| |_|\__\___|_|  |_| \_|_.__/|_/___|
+                                                                            
+
+    }---------------------------------------{                               
+}--------------> \033[1;32mYahoo Mail Valid\e[0;1m\e[33;1m <--------------{
+    }---------------------------------------{
+                                                                            
+ Coded By : Muhammad Nabil / HunterNblz
+ Github   : https//github.com/hunternblz\n\n\e[0;1m";
 sleep(2);
 echo $banner;
 sleep(2);
-echo "[\e[33;1m+\e[0;1m] List Email : ";
+echo "[\033[1;31m?\e[0;1m] List Mail : ";
 $list = trim(fgets(STDIN));
 echo "\n";
 $file = file_get_contents("$list");
@@ -31,7 +29,7 @@ for ($a = 0; $a < count($data); $a++) {
     $x++;
      
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://nabill.me/api/yahoo.php?email='.$email);
+    curl_setopt($ch, CURLOPT_URL, 'https://api.nabill.me/yahoo.php?email='.$email);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, true);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -43,14 +41,15 @@ for ($a = 0; $a < count($data); $a++) {
     $result = curl_exec($ch);
     $hasil = json_decode($result);
     curl_close($ch);
-
-    if($hasil->status === "live"){
-        $x = fopen("HunterNblz_LIVE.txt", "a+");
-        fwrite($x, $email."\r\n");
-    }else{
-        $x = fopen("HunterNblz_DEAD.txt", "a+");
-        fwrite($x, $email."\r\n");
+	$status = $hasil->status;
+	if($status == 'live'){
+		echo "$email | \033[1;32mLive\e[0;1m\n";
+		$x = fopen("Yahoo_LIVE.txt", "a+");
+		fwrite($x, $email."\r\n");
+	}else{
+		echo "$email | \e[1;91mDie\e[0;1m\n";
+		$x = fopen("Yahoo_DIE.txt", "a+");
+		fwrite($x, $email."\r\n");
     }
-    echo "\e[1;92m$email | \e[1;91m".$hasil->status."\e[0m\n";
 }
 ?>
