@@ -10,4 +10,4 @@ $ php Yahoo.php
 
 # Note
 - Live : Email Registered
-- Dead : Unregistered Email
+- Die : Unregistered Email
