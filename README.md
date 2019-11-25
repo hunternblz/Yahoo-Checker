@@ -1,4 +1,12 @@
-# Yahoo Checker
+<H1 align="center">
+Yahoo Checker
+</H1>
+
+<p align="center">
+  <a><br> SCREENSHOT </br></a>
+  <br>
+  <img src="Screenshot.jpg" width="640" title="Screenshot" alt="Screenshot">
+</p>
 
 ## Installation + Usage
 
